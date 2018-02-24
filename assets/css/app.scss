@@ -1,3 +1,10 @@
-h1 {
-    color: #f00;
-}
+@import 'foundation';
+
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-table;
+@include foundation-visibility-classes;
