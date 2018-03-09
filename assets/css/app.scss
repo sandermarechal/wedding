@@ -1,5 +1,9 @@
-@import 'foundation';
+// Foundation settings
+$body-font-family: "Open Sans";
+$header-font-family: "Roboto Slab";
 
+// Foundation imports
+@import 'foundation';
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
@@ -8,3 +12,52 @@
 @include foundation-button-group;
 @include foundation-table;
 @include foundation-visibility-classes;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');
+
+// Global styles
+body {
+    background: repeat url(/images/background-light.jpg);
+}
+
+header {
+    text-align: center;
+}
+
+#home {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    margin: 30px 0;
+    padding: 30px;
+    background-color: $white;
+    max-width: 600px;
+    transform: rotate(-2deg);
+    box-shadow: -3px 5px 10px $black;
+
+    img {
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+.dates {
+    text-align: center;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    p:first-child {
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+}
