@@ -10,12 +10,7 @@
         {% endblock %}
     </head>
     <body>
-        <div class="grid-container">
-            <header>
-                <h1>Astrid <i class="fas fa-heart"></i> Sander</h1>
-            </header>
-            {% block body %}{% endblock %}
-        </div>
+        {% block body %}{% endblock %}
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('build/js/app.js') }}"></script>
         {% endblock %}

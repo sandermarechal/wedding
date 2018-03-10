@@ -1,6 +1,11 @@
+// Colors
+$app-menu-background: #444444;
+
 // Foundation settings
 $body-font-family: "Open Sans";
 $header-font-family: "Roboto Slab";
+$titlebar-background: $app-menu-background;
+$topbar-background: $app-menu-background;
 
 // Foundation imports
 @import 'foundation';
@@ -10,7 +15,14 @@ $header-font-family: "Roboto Slab";
 @include foundation-forms;
 @include foundation-button;
 @include foundation-button-group;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-off-canvas;
 @include foundation-table;
+@include foundation-title-bar;
+@include foundation-top-bar;
 @include foundation-visibility-classes;
 
 // Fonts
@@ -23,6 +35,38 @@ body {
 
 header {
     text-align: center;
+}
+
+@include breakpoint(small only) {
+    .top-bar {
+        display: none;
+    }
+}
+
+@include breakpoint(medium) {
+    .title-bar {
+        display: none;
+    }
+}
+
+.off-canvas {
+    background-color: $app-menu-background;
+}
+
+.top-bar, .title-bar, .off-canvas .menu {
+    color: $white;
+
+    a {
+        color: $white;
+
+        &:hover {
+            background-color: smart-scale($app-menu-background);
+        }
+    }
+}
+
+#content {
+    background-color: rgba(240, 240, 240, 0.7);
 }
 
 #home {
