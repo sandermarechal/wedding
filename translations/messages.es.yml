@@ -1,0 +1,7 @@
+form:
+    user:
+        email: Correo electrónico
+        name: Nombre
+        password: Contraseña nueva
+        password_repeat: Repetir contraseña
+        submit: Crear cuenta

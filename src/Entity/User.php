@@ -7,13 +7,16 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
  *
  * @ORM\Entity
  * @ORM\Table(name="usr")
+ * @UniqueEntity(fields="email", message="email_taken")
  */
 class User implements UserInterface, \Serializable
 {
@@ -25,19 +28,39 @@ class User implements UserInterface, \Serializable
     private $id;
 
     /**
-     * @ORM\Column(name="email", type="string", unique=true)
+     * @ORM\Column(name="name", type="string")
+     * @Assert\NotBlank()
      */
-    private $email;
+    private $name = '';
+
+    /**
+     * @ORM\Column(name="email", type="string", unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    private $email = '';
+
+    /**
+     * @ORM\Column(name="locale", type="string", length=2)
+     * @Assert\NotBlank()
+     */
+    private $locale = '';
 
     /**
      * @ORM\Column(name="roles", type="simple_array")
      */
-    private $roles = [];
+    private $roles = ['ROLE_USER'];
 
     /**
      * @ORM\Column(name="password", type="string")
      */
-    private $password;
+    private $password = '';
+
+    /**
+     * @Assert\NotBlank
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword = '';
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Guest", mappedBy="user")
@@ -47,9 +70,9 @@ class User implements UserInterface, \Serializable
     /**
      * Constructor
      */
-    public function __construct(string $email)
+    public function __construct(string $locale)
     {
-        $this->email = $email;
+        $this->locale = $locale;
         $this->guests = new ArrayCollection();
     }
 
@@ -59,6 +82,23 @@ class User implements UserInterface, \Serializable
     public function getId(): int
     {
         return $this->id;
+    }
+
+    /**
+     * Getter for name
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+    
+    /**
+     * Setter for name
+     */
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+        return $this;
     }
 
     /**
@@ -84,6 +124,14 @@ class User implements UserInterface, \Serializable
     {
         $this->email = $email;
         return $this;
+    }
+
+    /**
+     * Getter for locale
+     */
+    public function getLocale(): string
+    {
+        return $this->locale;
     }
 
     /**
@@ -120,10 +168,28 @@ class User implements UserInterface, \Serializable
     }
 
     /**
+     * Getter for plainPassword
+     */
+    public function getPlainPassword(): string
+    {
+        return $this->plainPassword;
+    }
+    
+    /**
+     * Setter for plainPassword
+     */
+    public function setPlainPassword(string $plainPassword): self
+    {
+        $this->plainPassword = $plainPassword;
+        return $this;
+    }
+
+    /**
      * Removes sensitive data from the user.
      */
     public function eraseCredentials()
     {
+        $this->plainPassword = '';
     }
 
     /**
@@ -161,8 +227,10 @@ class User implements UserInterface, \Serializable
 
     /**
      * Serialize the user
+     *
+     * @return array
      */
-    public function serialize(): array
+    public function serialize()
     {
         return serialize([
             $this->id,
@@ -173,8 +241,10 @@ class User implements UserInterface, \Serializable
 
     /**
      * Unserialize the user
+     *
+     * @param string $serialized
      */
-    public function unserialize(string $serialized)
+    public function unserialize($serialized)
     {
         list (
             $this->id,

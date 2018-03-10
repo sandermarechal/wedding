@@ -1,3 +1,11 @@
-controllers:
-    resource: ../../src/Controller/
+home:
+    resource: ../../src/Controller/HomeController.php
     type: annotation
+    prefix: /
+
+user:
+    resource: ../../src/Controller/UserController.php
+    type: annotation
+    prefix: /{_locale}/user
+    requirements:
+        _locale: nl|es

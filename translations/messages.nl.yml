@@ -1,0 +1,7 @@
+form:
+    user:
+        email: E-mail adres
+        name: Naam
+        password: Wachtwoord
+        password_repeat: Herhaal wachtwoord
+        submit: Registreren

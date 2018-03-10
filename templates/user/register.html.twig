@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.plainPassword) }}
+        <input type="submit" class="button" value="{{ 'form.user.submit'|trans }}" />
+    {{ form_end(form) }}
+{% endblock %}
