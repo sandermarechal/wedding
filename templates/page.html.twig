@@ -5,6 +5,9 @@
         {# Small screen menu #}
         <div class="off-canvas position-right" id="off-canvas" data-off-canvas>
             {% if is_granted('ROLE_USER') %}
+                <ul class="menu vertical">
+                    <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
+                </ul>
             {% else %}
                 <ul class="menu vertical">
                     <li><a href="{{ path('app_user_login') }}">{{ 'menu.login'|trans }}</a></li>
@@ -17,7 +20,7 @@
             {# Title bar for small screens #}
             <div class="title-bar">
                 <div class="title-bar-left">
-                    <div class="title-bar-title"><a href="{{ path('app_home_index') }}">Astrid <i class="fas fa-heart"></i> Sander</a></div>
+                    <div class="title-bar-title"><a href="{{ path('home') }}">Astrid <i class="fas fa-heart"></i> Sander</a></div>
                 </div>
                 <div class="title-bar-right">
                     <button class="menu-icon" type="button" data-toggle="off-canvas"></button>
@@ -28,10 +31,15 @@
             <div class="top-bar">
                 <div class="top-bar-left">
                     <ul class="menu">
-                        <li class="menu-text"><a href="{{ path('app_home_index') }}">Astrid <i class="fas fa-heart"></i> Sander</a></li>
+                        <li class="menu-text"><a href="{{ path('home') }}">Astrid <i class="fas fa-heart"></i> Sander</a></li>
                     </ul>
                 </div>
                 {% if is_granted('ROLE_USER') %}
+                    <div class="top-bar-right">
+                        <ul class="menu">
+                            <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
+                        </ul>
+                    </div>
                 {% else %}
                     <div class="top-bar-right">
                         <ul class="menu">

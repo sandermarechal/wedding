@@ -13,6 +13,7 @@ form:
 
 menu:
     login: Inloggen
+    logout: Uitloggen
     register: Registreren
 
 view:

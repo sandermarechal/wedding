@@ -9,6 +9,3 @@ user:
     prefix: /{_locale}/user
     requirements:
         _locale: nl|es
-
-logout:
-    path: /logout
