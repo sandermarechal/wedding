@@ -1,0 +1,10 @@
+{% for level, messages in app.session.flashbag.all %}
+    {% for message in messages %}
+        <div class="callout {{ level == 'error' ? 'alert' : level }}" data-closable>
+            {{ message|trans }}
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+{% endfor %}

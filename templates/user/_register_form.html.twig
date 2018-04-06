@@ -1,0 +1,7 @@
+<h1>{{ 'view.user.register.title'|trans }}</h1>
+{{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword) }}
+    <input type="submit" class="button" value="{{ 'form.user.register'|trans }}" />
+{{ form_end(form) }}

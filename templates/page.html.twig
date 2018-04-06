@@ -4,18 +4,20 @@
     <div class="off-canvas-wrapper">
         {# Small screen menu #}
         <div class="off-canvas position-right" id="off-canvas" data-off-canvas>
-            <ul class="menu vertical">
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
-                <li><a href="#">Three</a></li>
-            </ul>
+            {% if is_granted('ROLE_USER') %}
+            {% else %}
+                <ul class="menu vertical">
+                    <li><a href="{{ path('app_user_login') }}">{{ 'menu.login'|trans }}</a></li>
+                    <li><a href="{{ path('app_user_register') }}">{{ 'menu.register'|trans }}</a></li>
+                </ul>
+            {% endif %}
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
             {# Title bar for small screens #}
             <div class="title-bar">
                 <div class="title-bar-left">
-                    <div class="title-bar-title">Astrid <i class="fas fa-heart"></i> Sander</div>
+                    <div class="title-bar-title"><a href="{{ path('app_home_index') }}">Astrid <i class="fas fa-heart"></i> Sander</a></div>
                 </div>
                 <div class="title-bar-right">
                     <button class="menu-icon" type="button" data-toggle="off-canvas"></button>
@@ -26,18 +28,18 @@
             <div class="top-bar">
                 <div class="top-bar-left">
                     <ul class="menu">
-                        <li class="menu-text">Astrid <i class="fas fa-heart"></i> Sander</li>
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Two</a></li>
-                        <li><a href="#">Three</a></li>
+                        <li class="menu-text"><a href="{{ path('app_home_index') }}">Astrid <i class="fas fa-heart"></i> Sander</a></li>
                     </ul>
                 </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Two</a></li>
-                    </ul>
-                </div>
+                {% if is_granted('ROLE_USER') %}
+                {% else %}
+                    <div class="top-bar-right">
+                        <ul class="menu">
+                            <li><a href="{{ path('app_user_login') }}">{{ 'menu.login'|trans }}</a></li>
+                            <li><a href="{{ path('app_user_register') }}">{{ 'menu.register'|trans }}</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
 
             {# Page content #}

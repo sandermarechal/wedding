@@ -1,7 +1,24 @@
+flashes:
+    register:
+        success: Je account is aangemaakt. Je kan nu inloggen.
+
 form:
     user:
         email: E-mail adres
+        login: Inloggen
         name: Naam
         password: Wachtwoord
         password_repeat: Herhaal wachtwoord
-        submit: Registreren
+        register: Registreren
+
+menu:
+    login: Inloggen
+    register: Registreren
+
+view:
+    user:
+        divider: of
+        login:
+            title: Log in
+        register:
+            title: Maak een account aan

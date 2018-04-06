@@ -1,0 +1,17 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    {% include 'common/flashes.html.twig' %}
+
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-auto">
+            {% include 'user/_login_form.html.twig' %}
+        </div>
+        <div class="cell medium-shrink align-self-middle">
+            {{ 'view.user.divider'|trans }}
+        </div>
+        <div class="cell medium-auto">
+            {% include 'user/_register_form.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

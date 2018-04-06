@@ -11,12 +11,48 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
  * User controller
  */
 class UserController extends Controller
 {
+    /**
+     * Login or register an account
+     *
+     * @Route("/")
+     * @Template
+     */
+    public function indexAction(Request $request, AuthenticationUtils $authUtils)
+    {
+        $user = new User($request->getLocale());
+
+        $form = $this->createForm(UserType::class, $user, [
+            'action' => $this->generateUrl('app_user_register'),
+        ]);
+
+        return [
+            'form' => $form->createView(),
+            'lastUser' => $authUtils->getLastUsername(),
+            'error' => $authUtils->getLastAuthenticationError(),
+        ];
+    }
+
+    /**
+     * Login
+     *
+     * @Route("/login")
+     * @Template
+     */
+    public function loginAction(Request $request, AuthenticationUtils $authUtils)
+    {
+        return [
+            'lastUser' => $authUtils->getLastUsername(),
+            'error' => $authUtils->getLastAuthenticationError(),
+        ];
+    }
+
     /**
      * Register an account
      *
@@ -38,7 +74,9 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('app_home_index');
+            $this->addFlash('success', 'flashes.register.success');
+
+            return $this->redirectToRoute('app_user_index');
         }
 
         return [

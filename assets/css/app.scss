@@ -11,10 +11,13 @@ $topbar-background: $app-menu-background;
 @import 'foundation';
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
+@include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-forms;
 @include foundation-button;
 @include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
 @include foundation-menu;
 @include foundation-menu-icon;
 @include foundation-dropdown;
@@ -67,6 +70,7 @@ header {
 
 #content {
     background-color: rgba(240, 240, 240, 0.7);
+    padding-top: 15px;
 }
 
 #home {

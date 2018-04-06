@@ -1,0 +1,19 @@
+<h1>{{ 'view.user.login.title'|trans }}</h1>
+{% if error %}
+    <div class="callout alert" data-closable>
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{% endif %}
+
+<form action="{{ path('app_user_login') }}" method="post">
+    <label for="username">{{ 'form.user.email'|trans }}</label>
+    <input type="text" id="username" name="_username" value="{{ lastUser }}" />
+
+    <label for="password">{{ 'form.user.password'|trans }}</label>
+    <input type="password" id="password" name="_password" />
+
+    <input type="submit" class="button" value="{{ 'form.user.login'|trans }}" />
+</form>

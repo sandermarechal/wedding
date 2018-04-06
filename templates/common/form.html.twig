@@ -1,0 +1,54 @@
+{% extends "form_div_layout.html.twig" %}
+
+{# Widgets #}
+
+{% block form_widget_simple -%}
+    {% if errors|length > 0 -%}
+        {% set attr = attr|merge({class: (attr.class|default('') ~ ' is-invalid-input')|trim}) %}
+    {% endif %}
+    {{- parent() -}}
+{%- endblock form_widget_simple %}
+
+{% block textarea_widget -%}
+    {% if errors|length > 0 -%}
+        {% set attr = attr|merge({class: (attr.class|default('') ~ ' is-invalid-input')|trim}) %}
+    {% endif %}
+    {{- parent() -}}
+{%- endblock textarea_widget %}
+
+{% block button_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' button')|trim}) %}
+    {{- parent() -}}
+{%- endblock button_widget %}
+
+{# Labels #}
+
+{% block form_label -%}
+    {% if errors|length > 0 -%}
+        {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' is-invalid-label')|trim}) %}
+    {% endif %}
+    {{- parent() -}}
+{%- endblock form_label %}
+
+{# Rows #}
+
+{%- block form_row -%}
+    <div>
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock form_row -%}
+
+{# Errors #}
+
+{% block form_errors -%}
+    {% if errors|length > 0 -%}
+        {% if form is not rootform %}<span class="form-error is-visible">{% else %}<div class="callout alert">{% endif %}
+        {%- for error in errors -%}
+            {{ error.message }}
+            {% if not loop.last %}, {% endif %}
+        {%- endfor -%}
+        {% if form is not rootform %}</span>{% else %}</div>{% endif %}
+    {%- endif %}
+{%- endblock form_errors %}
