@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\Type\UserType;
+use App\Form\Type\RegistrationType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         $user = new User($request->getLocale());
 
-        $form = $this->createForm(UserType::class, $user, [
+        $form = $this->createForm(RegistrationType::class, $user, [
             'action' => $this->generateUrl('app_user_register'),
         ]);
 
@@ -63,7 +63,7 @@ class UserController extends Controller
     {
         $user = new User($request->getLocale());
 
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(RegistrationType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -74,7 +74,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('success', 'flashes.register.success');
+            $this->addFlash('success', 'flash.register.success');
 
             return $this->redirectToRoute('app_user_index');
         }

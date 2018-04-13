@@ -6,15 +6,15 @@ namespace App\Form\Type;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type;
 
 /**
- * User form type
+ * Registration form type
  */
-class UserType extends AbstractType
+class RegistrationType extends AbstractType
 {
     /**
      * Build the form
@@ -28,12 +28,14 @@ class UserType extends AbstractType
             ->add('email', Type\EmailType::class, [
                 'label' => 'form.user.email',
             ])
-            ->add('locale', Type\ChoiceType::class, [
-                'label' => 'form.user.email',
-                'choices' => [
-                    'Nederlands' => 'nl',
-                    'Spaans' => 'es',
-                ]
+            ->add('plainPassword', Type\RepeatedType::class, [
+                'type' => Type\PasswordType::class,
+                'first_options' => [
+                    'label' => 'form.user.password',
+                ],
+                'second_options' => [
+                    'label' => 'form.user.password_repeat',
+                ],
             ])
         ;
     }
@@ -46,9 +48,7 @@ class UserType extends AbstractType
         $resolver
             ->setDefaults([
                 'data_class' => User::class,
-                'empty_data' => function (FormInterface $form) {
-                    return new User($form->get('locale')->getData());
-                }
+                'validation_groups' => ['Default', 'registration'],
             ])
         ;
     }

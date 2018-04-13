@@ -65,6 +65,18 @@
     "ocramius/proxy-manager": {
         "version": "2.1.1"
     },
+    "pagerfanta/pagerfanta": {
+        "version": "v1.0.5"
+    },
+    "prezent/crud-bundle": {
+        "version": "0.6.6"
+    },
+    "prezent/grid": {
+        "version": "0.9.8"
+    },
+    "prezent/grid-bundle": {
+        "version": "0.4.5"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -118,6 +130,9 @@
     },
     "symfony/event-dispatcher": {
         "version": "v4.0.4"
+    },
+    "symfony/expression-language": {
+        "version": "v4.0.8"
     },
     "symfony/filesystem": {
         "version": "v4.0.4"
@@ -206,6 +221,9 @@
     "symfony/stopwatch": {
         "version": "v4.0.6"
     },
+    "symfony/templating": {
+        "version": "v4.0.8"
+    },
     "symfony/translation": {
         "version": "3.3",
         "recipe": {
@@ -254,8 +272,20 @@
     "symfony/yaml": {
         "version": "v4.0.4"
     },
+    "twig/extensions": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "4851df0afc426b8f07204379d21fca25b6df5d68"
+        }
+    },
     "twig/twig": {
         "version": "v2.4.4"
+    },
+    "white-october/pagerfanta-bundle": {
+        "version": "v1.1.2"
     },
     "zendframework/zend-code": {
         "version": "3.3.0"

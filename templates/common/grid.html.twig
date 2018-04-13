@@ -1,0 +1,10 @@
+{% extends '@PrezentGrid/Grid/grid.html.twig' %}
+
+{%- block grid_action -%}
+    {% if icon is defined %}
+        {% set content %}
+            <i class="{{ icon }}"></i>
+        {% endset %}
+    {% endif %}
+    {{ parent() }}
+{%- endblock -%}

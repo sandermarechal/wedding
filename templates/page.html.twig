@@ -34,6 +34,18 @@
                         <li class="menu-text"><a href="{{ path('home') }}">Astrid <i class="fas fa-heart"></i> Sander</a></li>
                     </ul>
                 </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="top-bar-right">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li class="menu-text">
+                                Beheer
+                                <ul class="menu">
+                                    <li><a href="{{ path('app_useradmin_index') }}">Gebruikers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
                 {% if is_granted('ROLE_USER') %}
                     <div class="top-bar-right">
                         <ul class="menu">

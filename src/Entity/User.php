@@ -57,8 +57,8 @@ class User implements UserInterface, \Serializable
     private $password = '';
 
     /**
-     * @Assert\NotBlank
-     * @Assert\Length(max=4096)
+     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\Length(max=4096, groups={"registration"})
      */
     private $plainPassword = '';
 
@@ -132,6 +132,15 @@ class User implements UserInterface, \Serializable
     public function getLocale(): string
     {
         return $this->locale;
+    }
+
+    /**
+     * Set locale
+     */
+    public function setLocale(string $locale): self
+    {
+        $this->locale = $locale;
+        return $this;
     }
 
     /**

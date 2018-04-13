@@ -1,0 +1,3 @@
+prezent_grid:
+    themes: 
+        - 'common/grid.html.twig'

@@ -26,3 +26,16 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    Twig\Extensions\TextExtension:
+        tags: ['twig.extension']
+
+    app.pagerfanta.view:
+        class: Pagerfanta\View\DefaultView
+        arguments: ['@App\Pagerfanta\FoundationTemplate']
+        tags:
+            - {name: pagerfanta.view, alias: foundation}
+
+    App\Grid\Extension\IconTypeExtension:
+        public: true
+        tags:
+            - {name: prezent_grid.element_type_extension, extended_type: Prezent\Grid\Extension\Core\Type\ActionType}

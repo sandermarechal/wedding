@@ -1,6 +1,27 @@
-flashes:
+crud:
+    useradmin:
+        index:
+            title: Gebruikers
+            action:
+                add: Nieuwe gebruiker
+        add:
+            title: Gebruiker toevoegen
+        edit:
+            title: Gebruiker bewerken
+
+flash:
     register:
         success: Je account is aangemaakt. Je kan nu inloggen.
+    useradmin:
+        add:
+            success: De gebruiker is aangemaakt.
+            error: De gebruiker kon niet worden aangemaakt.
+        edit:
+            success: De gebruiker is bewerkt.
+            error: De gebruiker kon niet worden bewerkt.
+        delete:
+            success: De gebruiker is verwijderd.
+            error: De gebruiker kon niet worden verwijderd.
 
 form:
     user:
@@ -10,11 +31,34 @@ form:
         password: Wachtwoord
         password_repeat: Herhaal wachtwoord
         register: Registreren
+    useradmin:
+        submit: Opslaan
+        cancel: Annuleren
+
+grid:
+    user:
+        column:
+            id: ID
+            name: Naam
+            email: E-mail
+            locale: Taal
+        action:
+            edit: Bewerken
+            delete: Verwijderen
 
 menu:
     login: Inloggen
     logout: Uitloggen
     register: Registreren
+
+modal:
+    useradmin:
+        delete:
+            title: Gebruiker verwijderen
+            text: Weet u zeker dat u deze gebruiker wil verwijderen?
+            action:
+                cancel: Annuleren
+                delete: Verwijderen
 
 view:
     user:

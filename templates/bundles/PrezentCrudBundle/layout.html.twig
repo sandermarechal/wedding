@@ -1,0 +1,12 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <div class="crud-content">
+        {% block crud_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/bundles/prezentcrud/js/crud.js"></script>
+{% endblock %}

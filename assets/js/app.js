@@ -1,7 +1,11 @@
 import $ from 'jquery';
 import Foundation from 'foundation-sites';
 import fontawesome from '@fortawesome/fontawesome';
+import faCheck from '@fortawesome/fontawesome-free-solid/faCheck';
+import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 import faHeart from '@fortawesome/fontawesome-free-solid/faHeart';
+import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
+import faTrash from '@fortawesome/fontawesome-free-solid/faTrash';
 
 // Setup jQuery
 window.$ = $;
@@ -10,7 +14,13 @@ window.$ = $;
 Foundation.addToJquery($);
 
 // Setup FontAwesome
-fontawesome.library.add(faHeart);
+fontawesome.library.add(
+    faCheck,
+    faEdit,
+    faHeart,
+    faTimes,
+    faTrash,
+);
 
 // Start
 $(document).ready(function () {

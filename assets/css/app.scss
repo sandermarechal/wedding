@@ -23,6 +23,8 @@ $topbar-background: $app-menu-background;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
 @include foundation-off-canvas;
+@include foundation-pagination;
+@include foundation-reveal;
 @include foundation-table;
 @include foundation-title-bar;
 @include foundation-top-bar;
@@ -66,6 +68,10 @@ header {
             background-color: smart-scale($app-menu-background);
         }
     }
+
+    .menu-text {
+        font-weight: normal;
+    }
 }
 
 #content {
@@ -108,4 +114,8 @@ header {
         font-size: 25px;
         margin-bottom: 0;
     }
+}
+
+input[type=submit] {
+    @include button();
 }
