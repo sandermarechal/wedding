@@ -39,3 +39,8 @@ services:
         public: true
         tags:
             - {name: prezent_grid.element_type_extension, extended_type: Prezent\Grid\Extension\Core\Type\ActionType}
+
+    App\Grid\Extension\RsvpType:
+        public: true
+        tags:
+            - {name: prezent_grid.element_type}

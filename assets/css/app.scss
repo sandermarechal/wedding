@@ -124,3 +124,7 @@ input[type=submit] {
     display: inline-block;
     float: right;
 }
+
+.rsvp-check { color: get-color(success); }
+.rsvp-question { color: $dark-gray; }
+.rsvp-times { color: get-color(alert); }

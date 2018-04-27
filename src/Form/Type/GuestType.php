@@ -6,6 +6,7 @@ namespace App\Form\Type;
 
 use App\Entity\Guest;
 use App\Entity\User;
+use App\Model\Rsvp;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type;
@@ -30,6 +31,16 @@ class GuestType extends AbstractType
             ->add('email', Type\EmailType::class, [
                 'label' => 'form.guest.email',
                 'required' => false,
+            ])
+            ->add('ceremony', Type\ChoiceType::class, [
+                'label' => 'form.guest.ceremony',
+                'choices' => Rsvp::getChoices(),
+                'expanded' => true,
+            ])
+            ->add('party', Type\ChoiceType::class, [
+                'label' => 'form.guest.party',
+                'choices' => Rsvp::getChoices(),
+                'expanded' => true,
             ])
         ;
 

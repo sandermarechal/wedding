@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Grid\Type;
 
+use App\Grid\Extension\RsvpType;
 use Prezent\Grid\BaseGridType;
 use Prezent\Grid\Extension\Core\Type;
 use Prezent\Grid\GridBuilder;
@@ -23,6 +24,12 @@ class GuestGridType extends BaseGridType
             ])
             ->addColumn('email', Type\StringType::class, [
                 'label' => 'grid.guest.column.email',
+            ])
+            ->addColumn('ceremony', RsvpType::class, [
+                'label' => 'grid.guest.column.ceremony',
+            ])
+            ->addColumn('party', RsvpType::class, [
+                'label' => 'grid.guest.column.party',
             ])
             ->addColumn('user', Type\StringType::class, [
                 'label' => 'grid.guest.column.user',

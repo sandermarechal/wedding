@@ -1358,16 +1358,16 @@
         },
         {
             "name": "prezent/crud-bundle",
-            "version": "0.8.0",
+            "version": "0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Prezent/prezent-crud-bundle.git",
-                "reference": "5987c48cedb8dd5f33f743f83ef85df15ebf0e07"
+                "reference": "73385770b888ebb855330ea7b9f4670e41a2346a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Prezent/prezent-crud-bundle/zipball/5987c48cedb8dd5f33f743f83ef85df15ebf0e07",
-                "reference": "5987c48cedb8dd5f33f743f83ef85df15ebf0e07",
+                "url": "https://api.github.com/repos/Prezent/prezent-crud-bundle/zipball/73385770b888ebb855330ea7b9f4670e41a2346a",
+                "reference": "73385770b888ebb855330ea7b9f4670e41a2346a",
                 "shasum": ""
             },
             "require": {
@@ -1415,7 +1415,7 @@
                 "datagrid",
                 "grid"
             ],
-            "time": "2018-04-26T09:27:27+00:00"
+            "time": "2018-04-27T12:02:00+00:00"
         },
         {
             "name": "prezent/grid",

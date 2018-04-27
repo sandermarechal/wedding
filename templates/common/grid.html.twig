@@ -8,3 +8,7 @@
     {% endif %}
     {{ parent() }}
 {%- endblock -%}
+
+{%- block grid_rsvp_widget -%}
+    <i class="fas fa-{{ value }} rsvp-{{ value }}"></i>
+{% endblock %}

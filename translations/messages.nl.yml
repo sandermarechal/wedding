@@ -51,6 +51,8 @@ form:
     guest:
         name: Naam
         email: E-mail adres
+        ceremony: Komt naar de ceremonie
+        party: Komt naar het feest
         user: Beheerd door
         submit: Opslaan
         cancel: Annuleren
@@ -83,6 +85,8 @@ grid:
         column:
             name: Naam
             email: E-mail
+            ceremony: Ceremonie
+            party: Feest
             user: Beheerd door
         action:
             edit: Bewerken
@@ -124,6 +128,11 @@ modal:
             action:
                 cancel: Annuleren
                 delete: Verwijderen
+
+rsvp:
+    YES: Ja
+    MAYBE: Misschien
+    NO: Nee
 
 view:
     user:

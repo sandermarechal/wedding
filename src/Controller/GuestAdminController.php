@@ -23,11 +23,25 @@ class GuestAdminController extends CrudController
 {
     protected function configure(Request $request, Configuration $config)
     {
+        $repository = $this->getRepository(Guest::class);
+
         $config
             ->setEntityClass(Guest::class)
             ->setFormType(GuestType::class)
             ->setFormOptions(['admin' => true])
             ->setGridType(GuestGridType::class)
+            ->setTemplateVariables([
+                'ceremonyCount' => $repository->countCeremony(),
+                'partyCount' => $repository->countParty(),
+            ])
         ;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function newInstance(Request $request)
+    {
+        return new Guest('');
     }
 }

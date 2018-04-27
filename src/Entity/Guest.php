@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Model\Rsvp;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Guest
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\GuestRepository")
  * @ORM\Table(name="guest")
  */
 class Guest
@@ -36,6 +37,16 @@ class Guest
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $user;
+
+    /**
+     * @ORM\Column(name="ceremony", type="string")
+     */
+    private $ceremony = Rsvp::MAYBE;
+
+    /**
+     * @ORM\Column(name="party", type="string")
+     */
+    private $party = Rsvp::MAYBE;
 
     /**
      * Constructor
@@ -115,6 +126,40 @@ class Guest
             $user->addGuest($this);
         }
     
+        return $this;
+    }
+
+    /**
+     * Get ceremony RSVP
+     */
+    public function getCeremony(): ?string
+    {
+        return $this->ceremony;
+    }
+    
+    /**
+     * Set ceremony RSVP
+     */
+    public function setCeremony(?string $ceremony): self
+    {
+        $this->ceremony = $ceremony;
+        return $this;
+    }
+
+    /**
+     * Get party RSVP
+     */
+    public function getParty(): ?string
+    {
+        return $this->party;
+    }
+    
+    /**
+     * Set party RSVP
+     */
+    public function setParty(?string $party): self
+    {
+        $this->party = $party;
         return $this;
     }
 }
