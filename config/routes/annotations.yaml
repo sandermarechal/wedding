@@ -3,6 +3,13 @@ home:
     type: annotation
     prefix: /
 
+guest_admin:
+    resource: ../../src/Controller/GuestAdminController.php
+    type: annotation
+    prefix: /{_locale}/admin/guest
+    requirements:
+        _locale: nl|es
+
 user:
     resource: ../../src/Controller/UserController.php
     type: annotation

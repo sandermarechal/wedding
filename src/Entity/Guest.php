@@ -72,20 +72,16 @@ class Guest
 
     /**
      * Getter for email
-     *
-     * @return string|null
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
     
     /**
      * Setter for email
-     *
-     * @param sting|null $email
      */
-    public function setEmail($email): self
+    public function setEmail(?string $email): self
     {
         $this->email = $email;
         return $this;
@@ -93,21 +89,16 @@ class Guest
 
     /**
      * Getter for user
-     *
-     * @return User|null
      */
-    public function getUser()
+    public function getUser(): ?User
     {
         return $this->user;
     }
     
     /**
      * Setter for user
-     *
-     * @param User $user
-     * @return self
      */
-    public function setUser(User $user = null)
+    public function setUser(User $user = null): self
     {
         if ($this->user == $user) {
             return $this;

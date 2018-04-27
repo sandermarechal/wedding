@@ -1,4 +1,13 @@
 crud:
+    guestadmin:
+        index:
+            title: Gasten
+            action:
+                add: Nieuwe gast
+        add:
+            title: Gast toevoegen
+        edit:
+            title: Gast bewerken
     useradmin:
         index:
             title: Gebruikers
@@ -10,6 +19,16 @@ crud:
             title: Gebruiker bewerken
 
 flash:
+    guestadmin:
+        add:
+            success: De gast is aangemaakt.
+            error: De gast kon niet worden aangemaakt.
+        edit:
+            success: De gast is bewerkt.
+            error: De gast kon niet worden bewerkt.
+        delete:
+            success: De gast is verwijderd.
+            error: De gast kon niet worden verwijderd.
     register:
         success: Je account is aangemaakt. Je kan nu inloggen.
     reset_password:
@@ -29,6 +48,15 @@ flash:
             error: De gebruiker kon niet worden verwijderd.
 
 form:
+    guest:
+        name: Naam
+        email: E-mail adres
+        user: Beheerd door
+        submit: Opslaan
+        cancel: Annuleren
+    guestadmin:
+        submit: Opslaan
+        cancel: Annuleren
     reset_password:
         title: Wachtwoord vergeten
         email: Uw e-mail adres
@@ -51,6 +79,14 @@ form:
         cancel: Annuleren
 
 grid:
+    guest:
+        column:
+            name: Naam
+            email: E-mail
+            user: Beheerd door
+        action:
+            edit: Bewerken
+            delete: Verwijderen
     user:
         column:
             id: ID
@@ -74,6 +110,13 @@ menu:
     register: Registreren
 
 modal:
+    guestadmin:
+        delete:
+            title: Gast verwijderen
+            text: Weet u zeker dat u deze gast wil verwijderen?
+            action:
+                cancel: Annuleren
+                delete: Verwijderen
     useradmin:
         delete:
             title: Gebruiker verwijderen
