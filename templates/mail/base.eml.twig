@@ -1,0 +1,23 @@
+{% extends '@PrezentInk/base.eml.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/../public/build/css/email.css" />
+{% endblock %}
+
+{% block body_text %}
+{% block content_text %}{% endblock %}
+
+-- 
+Astrid <3 Sander
+{% endblock %}
+
+{% block body_html %}
+    {% block content_html %}{% endblock %}
+    <container>
+        <row>
+            <columns>
+                <p>Astrid &#10084; Sander</p>
+            </columns>
+        </row>
+    </container>
+{% endblock %}

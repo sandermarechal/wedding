@@ -119,3 +119,8 @@ header {
 input[type=submit] {
     @include button();
 }
+
+.password-reset {
+    display: inline-block;
+    float: right;
+}

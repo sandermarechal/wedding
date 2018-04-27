@@ -12,6 +12,11 @@ crud:
 flash:
     register:
         success: Je account is aangemaakt. Je kan nu inloggen.
+    reset_password:
+        sent: Er is een wachtwoord herstel verzoek verstuurd. Volg de instructies in de e-mail om uw wachtwoord te herstellen.
+    reset_password_verify:
+        invalid: Ongeldige wachtwoord herstel link.
+        success: Uw wachtwoord is aangepast. U kunt inloggen met uw nieuwe wachtwoord.
     useradmin:
         add:
             success: De gebruiker is aangemaakt.
@@ -24,6 +29,15 @@ flash:
             error: De gebruiker kon niet worden verwijderd.
 
 form:
+    reset_password:
+        title: Wachtwoord vergeten
+        email: Uw e-mail adres
+        submit: Herstellen
+    reset_password_verify:
+        title: Wachtwoord herstellen
+        password: Nieuw wachtwoord
+        repeat: Herhaal nieuw wachtwoord
+        submit: Herstellen
     user:
         email: E-mail adres
         login: Inloggen
@@ -31,6 +45,7 @@ form:
         password: Wachtwoord
         password_repeat: Herhaal wachtwoord
         register: Registreren
+        forgot_password: Wachtwoord vergeten?
     useradmin:
         submit: Opslaan
         cancel: Annuleren
@@ -45,6 +60,13 @@ grid:
         action:
             edit: Bewerken
             delete: Verwijderen
+
+mail:
+    reset_password:
+        subject: Wachtwoord herstellen
+        body_text: U heeft gevraagd om uw wachtwoord te herstellen. Klik op de volgende link om uw wachtwoord opnieuw in te stellen.
+        body_html: U heeft gevraagd om uw wachtwoord te herstellen. Klik op de volgende knop om uw wachtwoord opnieuw in te stellen.
+        button: Wachtwoord herstellen
 
 menu:
     login: Inloggen

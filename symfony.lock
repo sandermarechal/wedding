@@ -56,6 +56,12 @@
     "doctrine/orm": {
         "version": "v2.6.0"
     },
+    "egulias/email-validator": {
+        "version": "2.1.4"
+    },
+    "hampe/inky": {
+        "version": "1.3.6.2"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -68,6 +74,12 @@
     "pagerfanta/pagerfanta": {
         "version": "v1.0.5"
     },
+    "paquettg/php-html-parser": {
+        "version": "1.7.0"
+    },
+    "paquettg/string-encode": {
+        "version": "0.1.1"
+    },
     "prezent/crud-bundle": {
         "version": "0.6.6"
     },
@@ -76,6 +88,9 @@
     },
     "prezent/grid-bundle": {
         "version": "0.4.5"
+    },
+    "prezent/ink-bundle": {
+        "version": "0.1.4"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -98,6 +113,9 @@
             "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
         }
     },
+    "swiftmailer/swiftmailer": {
+        "version": "v6.0.2"
+    },
     "symfony/asset": {
         "version": "v4.0.4"
     },
@@ -115,6 +133,9 @@
             "version": "3.3",
             "ref": "c646e4b71af082e94b5014daca36ef6812bad076"
         }
+    },
+    "symfony/css-selector": {
+        "version": "v4.0.8"
     },
     "symfony/debug": {
         "version": "v4.0.4"
@@ -221,6 +242,15 @@
     "symfony/stopwatch": {
         "version": "v4.0.6"
     },
+    "symfony/swiftmailer-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "3db029c03e452b4a23f7fc45cec7c922c2247eb8"
+        }
+    },
     "symfony/templating": {
         "version": "v4.0.8"
     },
@@ -271,6 +301,9 @@
     },
     "symfony/yaml": {
         "version": "v4.0.4"
+    },
+    "tijsverkoyen/css-to-inline-styles": {
+        "version": "2.2.1"
     },
     "twig/extensions": {
         "version": "1.0",

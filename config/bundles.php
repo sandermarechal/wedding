@@ -12,4 +12,6 @@ return [
     WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle::class => ['all' => true],
     Prezent\GridBundle\PrezentGridBundle::class => ['all' => true],
     Prezent\CrudBundle\PrezentCrudBundle::class => ['all' => true],
+    Prezent\InkBundle\PrezentInkBundle::class => ['all' => true],
+    Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
 ];

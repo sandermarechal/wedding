@@ -9,6 +9,7 @@ Encore
     // Asset files
     .addEntry('js/app', './assets/js/app.js')
     .addStyleEntry('css/app', './assets/css/app.scss')
+    .addStyleEntry('css/email', './assets/css/email.scss')
 
     // Enable Sass
     .enableSassLoader(function (options) {

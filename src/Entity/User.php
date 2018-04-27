@@ -63,6 +63,11 @@ class User implements UserInterface, \Serializable
     private $plainPassword = '';
 
     /**
+     * @ORM\Column(name="token", type="string", nullable=true)
+     */
+    private $token;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Guest", mappedBy="user")
      */
     private $guests;
@@ -202,6 +207,23 @@ class User implements UserInterface, \Serializable
     }
 
     /**
+     * Get token
+     */
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+    
+    /**
+     * Set token
+     */
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
+        return $this;
+    }
+
+    /**
      * Getter for guests
      */
     public function getGuests(): Collection
@@ -236,8 +258,6 @@ class User implements UserInterface, \Serializable
 
     /**
      * Serialize the user
-     *
-     * @return array
      */
     public function serialize()
     {
@@ -250,8 +270,6 @@ class User implements UserInterface, \Serializable
 
     /**
      * Unserialize the user
-     *
-     * @param string $serialized
      */
     public function unserialize($serialized)
     {
