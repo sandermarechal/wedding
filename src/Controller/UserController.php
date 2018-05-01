@@ -5,15 +5,19 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\Type\CodeType;
 use App\Form\Type\RegistrationType;
 use App\Form\Type\ResetPasswordType;
 use App\Form\Type\ResetPasswordVerifyType;
+use App\Model\Code;
 use Doctrine\Common\Persistence\ObjectManager;
 use Prezent\InkBundle\Mail\TwigFactory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -155,6 +159,39 @@ class UserController extends Controller
             return $this->redirectToRoute('app_user_login');
         }
 
+        return [
+            'form' => $form->createView(),
+        ];
+    }
+
+    /**
+     * @Route("/verify")
+     * @Security("has_role('ROLE_USER')")
+     * @Template
+     */
+    public function verifyCodeAction(Request $request, ObjectManager $om, SessionInterface $session)
+    {
+        $code = new Code();
+
+        $form = $this->createForm(CodeType::class, $code);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($code->isValid()) {
+                $user = $this->getUser();
+                $user->addRole('ROLE_VERIFIED');
+                $om->flush($user);
+
+                if ($url = $session->get('verify_url')) {
+                    return $this->redirect($url);
+                }
+
+                return $this->redirectToRoute('home');
+            } else {
+                $this->addFlash('error', 'flash.code.error');
+            }
+        }
+        
         return [
             'form' => $form->createView(),
         ];

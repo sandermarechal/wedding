@@ -19,6 +19,8 @@ crud:
             title: Gebruiker bewerken
 
 flash:
+    code:
+        error: De verificatie code is niet juist. Probeer het nog eens of neem contact op met Astrid of Sander.
     guestadmin:
         add:
             success: De gast is aangemaakt.
@@ -48,6 +50,11 @@ flash:
             error: De gebruiker kon niet worden verwijderd.
 
 form:
+    code:
+        title: Verifieer account
+        text: Verifieer uw account met de code die in de officiële uitnodiging is verstuurd. Kijk in de papieren uitnodiging!
+        code: Verificatie code
+        submit: Verifieer
     guest:
         name: Naam
         email: E-mail adres

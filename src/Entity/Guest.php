@@ -49,6 +49,11 @@ class Guest
     private $party = Rsvp::MAYBE;
 
     /**
+     * @ORM\Column(name="verified", type="boolean")
+     */
+    private $verified = false;
+
+    /**
      * Constructor
      */
     public function __construct(string $name)
@@ -160,6 +165,23 @@ class Guest
     public function setParty(?string $party): self
     {
         $this->party = $party;
+        return $this;
+    }
+
+    /**
+     * Is verified
+     */
+    public function isVerified(): bool
+    {
+        return $this->verified;
+    }
+    
+    /**
+     * Set verified
+     */
+    public function setVerified(bool $verified = true): self
+    {
+        $this->verified = $verified;
         return $this;
     }
 }

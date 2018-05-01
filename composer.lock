@@ -1419,16 +1419,16 @@
         },
         {
             "name": "prezent/grid",
-            "version": "0.9.8",
+            "version": "0.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Prezent/prezent-grid.git",
-                "reference": "f7c76500dfde735a4a7d878c5146fe25f590aa58"
+                "reference": "2d3dee0cbd166e61cfb78d162d24a98f1a7b8ba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Prezent/prezent-grid/zipball/f7c76500dfde735a4a7d878c5146fe25f590aa58",
-                "reference": "f7c76500dfde735a4a7d878c5146fe25f590aa58",
+                "url": "https://api.github.com/repos/Prezent/prezent-grid/zipball/2d3dee0cbd166e61cfb78d162d24a98f1a7b8ba0",
+                "reference": "2d3dee0cbd166e61cfb78d162d24a98f1a7b8ba0",
                 "shasum": ""
             },
             "require": {
@@ -1471,7 +1471,7 @@
                 "grid",
                 "list"
             ],
-            "time": "2018-04-13T09:58:39+00:00"
+            "time": "2018-04-28T14:57:35+00:00"
         },
         {
             "name": "prezent/grid-bundle",

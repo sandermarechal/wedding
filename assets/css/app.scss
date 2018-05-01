@@ -128,3 +128,5 @@ input[type=submit] {
 .rsvp-check { color: get-color(success); }
 .rsvp-question { color: $dark-gray; }
 .rsvp-times { color: get-color(alert); }
+
+@import "../../vendor/prezent/grid-bundle/Resources/public/css/prezent-grid.css"

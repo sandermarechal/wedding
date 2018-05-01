@@ -21,9 +21,16 @@ class GuestGridType extends BaseGridType
         $builder
             ->addColumn('name', Type\StringType::class, [
                 'label' => 'grid.guest.column.name',
+                'sortable' => true,
+                'attr' => [
+                    'class' => function ($guest) {
+                        return $guest->isVerified() ? 'verified' : 'new';
+                    },
+                ]
             ])
             ->addColumn('email', Type\StringType::class, [
                 'label' => 'grid.guest.column.email',
+                'sortable' => true,
             ])
             ->addColumn('ceremony', RsvpType::class, [
                 'label' => 'grid.guest.column.ceremony',

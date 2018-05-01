@@ -30,6 +30,7 @@ class GuestAdminController extends CrudController
             ->setFormType(GuestType::class)
             ->setFormOptions(['admin' => true])
             ->setGridType(GuestGridType::class)
+            ->setDefaultSortField('name')
             ->setTemplateVariables([
                 'ceremonyCount' => $repository->countCeremony(),
                 'partyCount' => $repository->countParty(),

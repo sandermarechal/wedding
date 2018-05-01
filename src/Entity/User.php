@@ -157,6 +157,18 @@ class User implements UserInterface, \Serializable
     }
 
     /**
+     * Add a role
+     */
+    public function addRole(string $role): self
+    {
+        if (!in_array($role, $this->roles)) {
+            $this->roles[] = $role;
+        }
+
+        return $this;
+    }
+
+    /**
      * Returns the password used to authenticate the user.
      */
     public function getPassword(): string
