@@ -129,4 +129,15 @@ input[type=submit] {
 .rsvp-question { color: $dark-gray; }
 .rsvp-times { color: get-color(alert); }
 
+.guest {
+    .status {
+        display: inline-block;
+        width: 20px;
+    }
+    .actions {
+        width: 40px;
+        float: right;
+    }
+}
+
 @import "../../vendor/prezent/grid-bundle/Resources/public/css/prezent-grid.css"

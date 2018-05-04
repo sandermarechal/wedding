@@ -1,0 +1,14 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    {% if guest %}
+        <h1>{{ 'view.rsvp.title.edit'|trans }}</h1>
+    {% else %}
+        <h1>{{ 'view.rsvp.title.add'|trans }}</h1>
+    {% endif %}
+
+    {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <input type="submit" class="button" value="{{ 'form.guest.submit'|trans }}" />
+    {{ form_end(form) }}
+{% endblock %}

@@ -50,6 +50,7 @@
                 {% if is_granted('ROLE_USER') %}
                     <div class="top-bar-right">
                         <ul class="menu">
+                            <li><a href="{{ path('app_rsvp_index') }}">{{ 'menu.rsvp'|trans }}</a></li>
                             <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
                         </ul>
                     </div>

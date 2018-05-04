@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\User;
 use App\Model\Rsvp;
 use Doctrine\ORM\EntityRepository;
 
@@ -36,5 +37,18 @@ class GuestRepository extends EntityRepository
             ->setParameter('yes', Rsvp::YES);
 
         return $qb->getQuery()->getSingleScalarResult();
+    }
+
+    /**
+     * Find guests by user
+     */
+    public function findByUser(User $user): array
+    {
+        return $this->createQueryBuilder('g')
+            ->where('g.user = :user')
+            ->orderBy('g.name', 'ASC')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->getResult();
     }
 }

@@ -6,12 +6,14 @@ namespace App\Entity;
 
 use App\Model\Rsvp;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Guest
  *
  * @ORM\Entity(repositoryClass="App\Repository\GuestRepository")
  * @ORM\Table(name="guest")
+ * @UniqueEntity("name")
  */
 class Guest
 {

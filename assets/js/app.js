@@ -28,3 +28,16 @@ fontawesome.library.add(
 $(document).ready(function () {
     $(document).foundation();
 });
+
+// Managing guests
+var $modal = $('#guest-modal');
+
+$('.guest-add, .guest-edit').on('click', function (event) {
+    event.preventDefault();
+
+    $.ajax($(this).attr('href'))
+        .done(function (html) {
+            $modal.html($(html).find('#content'));
+            $modal.foundation('open');
+        });
+});

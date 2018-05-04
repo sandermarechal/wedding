@@ -119,6 +119,7 @@ menu:
     login: Inloggen
     logout: Uitloggen
     register: Registreren
+    rsvp: R.S.V.P.
 
 modal:
     guestadmin:
@@ -142,6 +143,23 @@ rsvp:
     NO: Nee
 
 view:
+    rsvp:
+        title:
+            index: R.S.V.P.
+            add: Nieuwe gast aanmelden
+            edit: Gast bewerken
+        text: Laat je weten of je naar het feest en/of de ceremonie komt? En wie je meeneemt? Graag alleen mensen toevoegen aan wie de uitnodiging ook daadwerkelijk is geadresseerd.
+        add_guest: Extra gast
+        edit_guest: Gast bewerken
+        delete_guest: Gast verwijderen
+        ceremony:
+            yes: Ik kom wel naar de ceremonie
+            maybe: Ik kom misschien naar de ceremonie
+            no: Ik kom niet naar de ceremonie
+        party:
+            yes: Ik kom wel naar het feest
+            maybe: Ik kom misschien naar het feest
+            no: Ik kom niet naar het feest
     user:
         divider: of
         login:

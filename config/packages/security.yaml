@@ -1,6 +1,8 @@
 security:
+    always_authenticate_before_granting: true
+
     role_hierarchy:
-        ROLE_ADMIN: ROLE_USER
+        ROLE_ADMIN: [ROLE_USER, ROLE_VERIFIED]
 
     encoders:
         App\Entity\User: bcrypt

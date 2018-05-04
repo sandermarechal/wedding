@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Guest;
 use App\Entity\User;
 use App\Form\Type\CodeType;
 use App\Form\Type\RegistrationType;
@@ -18,6 +19,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -169,7 +172,7 @@ class UserController extends Controller
      * @Security("has_role('ROLE_USER')")
      * @Template
      */
-    public function verifyCodeAction(Request $request, ObjectManager $om, SessionInterface $session)
+    public function verifyCodeAction(Request $request, ObjectManager $om, TokenStorageInterface $tokenStorage, SessionInterface $session)
     {
         $code = new Code();
 
@@ -180,7 +183,19 @@ class UserController extends Controller
             if ($code->isValid()) {
                 $user = $this->getUser();
                 $user->addRole('ROLE_VERIFIED');
-                $om->flush($user);
+
+                if (!$om->getRepository(Guest::class)->findOneByName($user->getName())) {
+                    $guest = new Guest($user->getName());
+                    $guest->setEmail($user->getEmail());
+                    $guest->setUser($user);
+
+                    $om->persist($guest);
+                }
+
+                $om->flush();
+
+                // Refresh token or the new role will not work
+                $tokenStorage->setToken(new UsernamePasswordToken($user, null, 'main', $user->getRoles()));
 
                 if ($url = $session->get('verify_url')) {
                     return $this->redirect($url);

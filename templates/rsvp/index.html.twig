@@ -1,0 +1,42 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <h2>{{ 'view.rsvp.title.index'|trans }}</h2>
+    <p>{{ 'view.rsvp.text'|trans }}</p>
+    {% for guest in guests %}
+        <div class="guest callout">
+            <div class="actions">
+                <a href="{{ path('app_rsvp_modify', {'guest': guest.id}) }}" class="guest-edit" title="{{ 'view.rsvp.edit_guest'|trans() }}"><i class="fas fa-edit"></i></a>
+                <a href="{{ path('app_rsvp_delete', {'guest': guest.id}) }}" class="guest-delete" title="{{ 'view.rsvp.delete_guest'|trans() }}"><i class="fas fa-trash"></i></a>
+            </div>
+
+            <h5>{{ guest.name }}</h5>
+            {% if guest.email %}
+                <p>{{ guest.email }}</p>
+            {% endif %}
+
+            <p>
+                {% if guest.ceremony == 'yes' %}
+                    <i class="status fas fa-check rsvp-check"></i> {{ 'view.rsvp.ceremony.yes'|trans }}<br />
+                {% elseif guest.ceremony == 'maybe' %}
+                    <i class="status fas fa-question rsvp-question"></i> {{ 'view.rsvp.ceremony.maybe'|trans }}<br />
+                {% else %}
+                    <i class="status fas fa-times rsvp-times"></i> {{ 'view.rsvp.ceremony.no'|trans }}<br />
+                {% endif %}
+
+                {% if guest.party == 'yes' %}
+                    <i class="status fas fa-check rsvp-check"></i> {{ 'view.rsvp.party.yes'|trans }}
+                {% elseif guest.party == 'maybe' %}
+                    <i class="status fas fa-question rsvp-question"></i> {{ 'view.rsvp.party.maybe'|trans }}
+                {% else %}
+                    <i class="status fas fa-times rsvp-times"></i> {{ 'view.rsvp.party.no'|trans }}
+                {% endif %}
+            </p>
+                    
+        </div>
+    {% endfor %}
+
+    <a href="{{ path('app_rsvp_modify') }}" class="button guest-add">{{ 'view.rsvp.add_guest'|trans() }}</a>
+
+    <div class="reveal" id="guest-modal" data-reveal></div>
+{% endblock %}

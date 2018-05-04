@@ -14,4 +14,5 @@ return [
     Prezent\CrudBundle\PrezentCrudBundle::class => ['all' => true],
     Prezent\InkBundle\PrezentInkBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
+    Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
 ];
