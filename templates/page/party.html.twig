@@ -1,0 +1,35 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <div class="grid-container">
+        <div class="hero-container">
+            <div class="hero">
+                <img src="/images/hero-square.jpg" />
+                <h4>{{ 'view.party.title'|trans }}</h4>
+            </div>
+            <h1>{{ 'view.party.party'|trans }}</h1>
+            <h2>{{ 'view.party.datetime'|trans }}</h2>
+            <a href="{{ path('app_rsvp_index') }}" class="button rsvp-now">{{ 'view.common.rsvp_now'|trans }}</a>
+        </div>
+        <div id="info">
+            <dl>
+                <dt>{{ 'view.party.location.key'|trans }}</dt>
+                <dd>{{ 'view.party.location.value'|trans }}</dd>
+                <dt>{{ 'view.party.start.key'|trans }}</dt>
+                <dd>{{ 'view.party.start.value'|trans }}</dd>
+                <dt>{{ 'view.party.outfit.key'|trans }}</dt>
+                <dd>{{ 'view.party.outfit.value'|trans }}</dd>
+                <dt>{{ 'view.party.parking.key'|trans }}</dt>
+                <dd>{{ 'view.party.parking.value'|trans }}</dd>
+                <dt>{{ 'view.party.transport.key'|trans }}</dt>
+                <dd>{{ 'view.party.transport.value'|trans }}</dd>
+            </dl>
+        </div>
+        <div id="map"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initPartyMap"></script>
+{% endblock %}

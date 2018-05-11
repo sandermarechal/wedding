@@ -48,36 +48,58 @@ var ceremonyData = [{
             lng: 5.303108,
         },
         title: 'Stadhuis',
+        open: true,
     }, {
         position: {
             lat: 51.687654,
             lng: 5.307381,
         },
-        title: 'Stadsherberg \'t Pumpke',
+        title: '\'t Pumpke',
+        open: true,
     }, {
         position: {
             lat: 51.685242,
             lng: 5.314218,
         },
         title: 'Parkeergarage St-Jan',
+        open: false,
     }, {
         position: {
             lat: 51.691440,
             lng: 5.304047,
         },
         title: 'Parkeergarage Arena',
+        open: false,
     }, {
         position: {
             lat: 51.686721,
             lng: 5.303237,
         },
         title: 'Parkeergarage Wolvenhoek',
+        open: false,
     }, {
         position: {
             lat: 51.690556,
             lng: 5.293543,
         },
         title: 'Station \'s-Hertogenbosch Centraal',
+        open: true,
+}];
+
+var partyData = [{
+        position: {
+            lat: 51.696302,
+            lng: 5.299841,
+        },
+        title: 'Koudijs Lokaal',
+        open: true,
+    }, {
+        position: {
+            lat: 51.690556,
+            lng: 5.293543,
+        },
+        title: 'Station \'s-Hertogenbosch Centraal',
+        open: true,
 }];
 
 function initMap(data) {
@@ -105,7 +127,9 @@ function initMap(data) {
             label.open(map, marker);
         });
 
-        label.open(map, marker);
+        if (point.open) {
+            label.open(map, marker);
+        }
 
         bounds.extend(marker.getPosition());
     });
@@ -116,4 +140,9 @@ function initMap(data) {
 // Map for the ceremony page
 initCeremonyMap = window.initCeremonyMap = function () {
     initMap(ceremonyData);
+}
+
+// Map for the party page
+initPartyMap = window.initPartyMap = function () {
+    initMap(partyData);
 }

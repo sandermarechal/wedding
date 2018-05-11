@@ -5,7 +5,7 @@
         <h1>Astrid <i class="fas fa-heart"></i> Sander</h1>
     </header>
     <div class="grid-container">
-        <div id="home">
+        <div class="hero-container">
             <div class="hero">
                 <img src="/images/hero-square.jpg" />
                 <h4>save-the-date</h4>
@@ -20,14 +20,14 @@
                         <p>10.08.18</p>
                         <p>Ceremonie / Ceremonia</p>
                         {% if not is_granted('ROLE_USER') %}
-                            <a class="button large" href="{{ path('app_user_index', {'_locale': 'nl'}) }}">Meld je aan!</a>
+                            <a class="button large" href="{{ path('app_rsvp_index', {'_locale': 'nl'}) }}">Meld je aan!</a>
                         {% endif %}
                     </div>
                     <div class="small-6 cell">
                         <p>08.09.18</p>
                         <p>Feest / Fiesta</p>
                         {% if not is_granted('ROLE_USER') %}
-                            <a class="button large" href="{{ path('app_user_index', {'_locale': 'es'}) }}">Register (es)!</a>
+                            <a class="button large" href="{{ path('app_rsvp_index', {'_locale': 'es'}) }}">Register (es)!</a>
                         {% endif %}
                     </div>
                 </div>

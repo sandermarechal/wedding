@@ -77,15 +77,13 @@ header {
 #content {
     background-color: rgba(240, 240, 240, 0.7);
     padding-top: 15px;
+    overflow: auto;
 }
 
-#home, #ceremony {
+.hero-container {
     max-width: 600px;
     margin: 30px auto;
     padding: 0 20px;
-}
-
-#ceremony {
     text-align: center;
 
     h1, h2 {
@@ -142,6 +140,7 @@ header {
 
 #map {
     height: 90vh;
+    margin-bottom: 20px;
 }
 
 input[type=submit] {

@@ -20,7 +20,7 @@ security:
         main:
             anonymous: true
             form_login:
-                login_path: app_user_login
+                login_path: app_user_index
                 check_path: app_user_login
             logout:
                 path: /logout
