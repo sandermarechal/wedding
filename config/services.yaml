@@ -24,6 +24,13 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+
+    # Grids must be public for lazy loading
+    App\Grid\Type\:
+        resource: '../src/Grid/Type/*'
+        public: true
+        tags: ['prezent_grid.grid_type']
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     Twig\Extensions\TextExtension:
