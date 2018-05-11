@@ -9,6 +9,7 @@ guest_admin:
     prefix: /{_locale}/admin/guest
     requirements:
         _locale: nl|es
+
 rsvp:
     resource: ../../src/Controller/RsvpController.php
     type: annotation
@@ -27,5 +28,12 @@ user_admin:
     resource: ../../src/Controller/UserAdminController.php
     type: annotation
     prefix: /{_locale}/admin/user
+    requirements:
+        _locale: nl|es
+
+page:
+    resource: ../../src/Controller/PageController.php
+    type: annotation
+    prefix: /{_locale}
     requirements:
         _locale: nl|es

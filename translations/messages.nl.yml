@@ -120,6 +120,7 @@ menu:
     logout: Uitloggen
     register: Registreren
     rsvp: R.S.V.P.
+    ceremony: Ceremonie
 
 modal:
     guestadmin:
@@ -143,6 +144,30 @@ rsvp:
     NO: Nee
 
 view:
+    ceremony:
+        title: 'Ceremonie 10-08-2018'
+        ceremony: Huwelijksvoltrekking
+        datetime: '10 augustus 2018 om 16:45'
+        location:
+            key: Locatie
+            value: "Stadhuis 's-Hertogenbosch"
+        start:
+            key: Aanvang
+            value: De ceremonie begint om 16:45 uur. Graag 15 minuten van tevoren aanwezig zijn.
+        outfit:
+            key: Kleding
+            value: Netjes
+        drinks:
+            key: Borrel
+            value: "Na afloop van de ceremonie is er voor directe familieleden een borrel in Stadsherberg 't Pumke, op loopafstand van het Stadhuis. Deze borrel duurt tot ongeveer 19:00 uur."
+        parking:
+            key: Parkeren
+            value: Parkeren is mogelijk in de Sint-Jans garage, parkeergarage De Arena of parkeergarage De Wolvenhoek. Allen op loopafstand van het Stadhuis.
+        transport:
+            key: Openbaar vervoer
+            value: "Het Stadhuis is op 15 minuten loopafstand van Centraal Station 's-Hertogenbosch"
+    common:
+        rsvp_now: R.S.V.P. nu!
     rsvp:
         title:
             index: R.S.V.P.

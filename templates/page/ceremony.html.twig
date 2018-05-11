@@ -1,0 +1,37 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <div class="grid-container">
+        <div id="ceremony">
+            <div class="hero">
+                <img src="/images/hero-square.jpg" />
+                <h4>{{ 'view.ceremony.title'|trans }}</h4>
+            </div>
+            <h1>{{ 'view.ceremony.ceremony'|trans }}</h1>
+            <h2>{{ 'view.ceremony.datetime'|trans }}</h2>
+            <a href="{{ path('app_rsvp_index') }}" class="button rsvp-now">{{ 'view.common.rsvp_now'|trans }}</a>
+        </div>
+        <div id="info">
+            <dl>
+                <dt>{{ 'view.ceremony.location.key'|trans }}</dt>
+                <dd>{{ 'view.ceremony.location.value'|trans }}</dd>
+                <dt>{{ 'view.ceremony.start.key'|trans }}</dt>
+                <dd>{{ 'view.ceremony.start.value'|trans }}</dd>
+                <dt>{{ 'view.ceremony.outfit.key'|trans }}</dt>
+                <dd>{{ 'view.ceremony.outfit.value'|trans }}</dd>
+                <dt>{{ 'view.ceremony.drinks.key'|trans }}</dt>
+                <dd>{{ 'view.ceremony.drinks.value'|trans }}</dd>
+                <dt>{{ 'view.ceremony.parking.key'|trans }}</dt>
+                <dd>{{ 'view.ceremony.parking.value'|trans }}</dd>
+                <dt>{{ 'view.ceremony.transport.key'|trans }}</dt>
+                <dd>{{ 'view.ceremony.transport.value'|trans }}</dd>
+            </dl>
+        </div>
+        <div id="map"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initCeremonyMap"></script>
+{% endblock %}

@@ -79,10 +79,18 @@ header {
     padding-top: 15px;
 }
 
-#home {
+#home, #ceremony {
     max-width: 600px;
     margin: 30px auto;
     padding: 0 20px;
+}
+
+#ceremony {
+    text-align: center;
+
+    h1, h2 {
+        text-align: center;
+    }
 }
 
 .hero {
@@ -116,6 +124,26 @@ header {
     }
 }
 
+#info {
+    @include breakpoint(medium) {
+        dl {
+            @include xy-grid();
+
+            dt {
+                @include xy-cell(3);
+            }
+
+            dd {
+                @include xy-cell(9);
+            }
+        }
+    }
+}
+
+#map {
+    height: 90vh;
+}
+
 input[type=submit] {
     @include button();
 }
@@ -138,6 +166,10 @@ input[type=submit] {
         width: 40px;
         float: right;
     }
+}
+
+.rsvp-now {
+    font-size: 1.5rem;
 }
 
 @import "../../vendor/prezent/grid-bundle/Resources/public/css/prezent-grid.css"

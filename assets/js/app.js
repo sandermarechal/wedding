@@ -41,3 +41,79 @@ $('.guest-add, .guest-edit').on('click', function (event) {
             $modal.foundation('open');
         });
 });
+
+var ceremonyData = [{
+        position: {
+            lat: 51.688442,
+            lng: 5.303108,
+        },
+        title: 'Stadhuis',
+    }, {
+        position: {
+            lat: 51.687654,
+            lng: 5.307381,
+        },
+        title: 'Stadsherberg \'t Pumpke',
+    }, {
+        position: {
+            lat: 51.685242,
+            lng: 5.314218,
+        },
+        title: 'Parkeergarage St-Jan',
+    }, {
+        position: {
+            lat: 51.691440,
+            lng: 5.304047,
+        },
+        title: 'Parkeergarage Arena',
+    }, {
+        position: {
+            lat: 51.686721,
+            lng: 5.303237,
+        },
+        title: 'Parkeergarage Wolvenhoek',
+    }, {
+        position: {
+            lat: 51.690556,
+            lng: 5.293543,
+        },
+        title: 'Station \'s-Hertogenbosch Centraal',
+}];
+
+function initMap(data) {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: {
+            lat: 51.688442,
+            lng: 5.303108,
+        },
+    });
+
+    var bounds = new google.maps.LatLngBounds();
+
+    $.each(data, function (i, point) {
+        var marker = new google.maps.Marker({
+            position: point.position,
+            map: map,
+        });
+
+        var label = new google.maps.InfoWindow({
+            content: point.title,
+        });
+
+        marker.addListener('click', function () {
+            label.open(map, marker);
+        });
+
+        label.open(map, marker);
+
+        bounds.extend(marker.getPosition());
+    });
+
+    map.fitBounds(bounds);
+}
+
+// Map for the ceremony page
+initCeremonyMap = window.initCeremonyMap = function () {
+    initMap(ceremonyData);
+}
