@@ -116,6 +116,7 @@ mail:
         button: Wachtwoord herstellen
 
 menu:
+    gifts: Kado's
     login: Inloggen
     logout: Uitloggen
     register: Registreren
@@ -169,6 +170,9 @@ view:
             value: "Het Stadhuis is op 15 minuten loopafstand van Centraal Station 's-Hertogenbosch."
     common:
         rsvp_now: R.S.V.P. nu!
+    gifts:
+        title: Kado-tip
+        text: "We hebben samen een prachtig huis in 's-Hertogenbosch, maar het is hard toe aan een opknapbeurt! Daarom vragen wij aan de gasten die een kado willen geven om een envelop met inhoud. Hiermee kunnen we ons huis eens goed onder handen nemen zodat we fris ons huwelijk in kunnen. Alvast bedankt!"
     party:
         title: 'Feest 08-09-2018'
         party: Feest!

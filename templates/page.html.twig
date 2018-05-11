@@ -34,6 +34,7 @@
                         <li><a href="{{ path('home') }}">Astrid <i class="fas fa-heart"></i> Sander</a></li>
                         <li><a href="{{ path('app_page_index', {'page': 'ceremony'}) }}">{{ 'menu.ceremony'|trans }}</a></li>
                         <li><a href="{{ path('app_page_index', {'page': 'party'}) }}">{{ 'menu.party'|trans }}</a></li>
+                        <li><a href="{{ path('app_page_index', {'page': 'gifts'}) }}">{{ 'menu.gifts'|trans }}</a></li>
                     </ul>
                 </div>
                 {% if is_granted('ROLE_ADMIN') %}

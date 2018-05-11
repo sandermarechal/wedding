@@ -3,6 +3,7 @@ import Foundation from 'foundation-sites';
 import fontawesome from '@fortawesome/fontawesome';
 import faCheck from '@fortawesome/fontawesome-free-solid/faCheck';
 import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
+import faEnvelope from '@fortawesome/fontawesome-free-solid/faEnvelope';
 import faHeart from '@fortawesome/fontawesome-free-solid/faHeart';
 import faQuestion from '@fortawesome/fontawesome-free-solid/faQuestion';
 import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
@@ -18,6 +19,7 @@ Foundation.addToJquery($);
 fontawesome.library.add(
     faCheck,
     faEdit,
+    faEnvelope,
     faHeart,
     faQuestion,
     faTimes,
