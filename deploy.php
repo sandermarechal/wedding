@@ -2,7 +2,7 @@
 
 namespace Deployer;
 
-require 'recipe/symfony.php';
+require 'recipe/symfony4.php';
 
 // Project name
 set('application', 'huwelijk');
@@ -14,7 +14,7 @@ set('repository', 'file:///home/sander/dev/huwelijk');
 set('git_tty', true);
 
 // Shared files/dirs between deploys 
-add('shared_files', ['.env']);
+add('shared_files', []);
 add('shared_dirs', []);
 
 // Writable dirs by web server 
