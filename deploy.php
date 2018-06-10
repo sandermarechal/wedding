@@ -27,8 +27,10 @@ host('sylvester')
 ;
     
 // Tasks
-task('build', function () {
-    run('cd {{release_path}} && build');
+desc('Build webpack assets');
+task('assets:webpack', function () {
+    run('cd {{release_path}} && yarn install');
+    run('cd {{release_path}} && yarn run encore dev');
 });
 
 // [Optional] if deploy fails automatically unlock.
@@ -36,3 +38,4 @@ after('deploy:failed', 'deploy:unlock');
 
 // Migrate database before symlink new release.
 before('deploy:symlink', 'database:migrate');
+before('deploy:symlink', 'assets:webpack');
