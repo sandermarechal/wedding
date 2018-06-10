@@ -18,6 +18,11 @@ Encore
         ];
     })
 
+    // Setup babel
+    .configureBabel(function(babelConfig) {
+        babelConfig.presets.push('es2017');
+    })
+
     .autoProvidejQuery()
 ;
 
