@@ -6,6 +6,7 @@
         <div class="off-canvas position-right" id="off-canvas" data-off-canvas>
             {% if is_granted('ROLE_USER') %}
                 <ul class="menu vertical">
+                    <li><a href="{{ path('app_rsvp_index') }}">{{ 'menu.rsvp'|trans }}</a></li>
                     <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
                 </ul>
             {% else %}
@@ -14,6 +15,11 @@
                     <li><a href="{{ path('app_user_register') }}">{{ 'menu.register'|trans }}</a></li>
                 </ul>
             {% endif %}
+            <ul class="menu vertical">
+                <li><a href="{{ path('app_page_index', {'page': 'ceremony'}) }}">{{ 'menu.ceremony'|trans }}</a></li>
+                <li><a href="{{ path('app_page_index', {'page': 'party'}) }}">{{ 'menu.party'|trans }}</a></li>
+                <li><a href="{{ path('app_page_index', {'page': 'gifts'}) }}">{{ 'menu.gifts'|trans }}</a></li>
+            </ul>
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
