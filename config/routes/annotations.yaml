@@ -6,34 +6,24 @@ home:
 guest_admin:
     resource: ../../src/Controller/GuestAdminController.php
     type: annotation
-    prefix: /{_locale}/admin/guest
-    requirements:
-        _locale: nl|es
+    prefix: /admin/guest
 
 rsvp:
     resource: ../../src/Controller/RsvpController.php
     type: annotation
-    prefix: /{_locale}/rsvp
-    requirements:
-        _locale: nl|es
+    prefix: /rsvp
 
 user:
     resource: ../../src/Controller/UserController.php
     type: annotation
-    prefix: /{_locale}/user
-    requirements:
-        _locale: nl|es
+    prefix: /user
 
 user_admin:
     resource: ../../src/Controller/UserAdminController.php
     type: annotation
-    prefix: /{_locale}/admin/user
-    requirements:
-        _locale: nl|es
+    prefix: /admin/user
 
 page:
     resource: ../../src/Controller/PageController.php
     type: annotation
-    prefix: /{_locale}
-    requirements:
-        _locale: nl|es
+    prefix: /
