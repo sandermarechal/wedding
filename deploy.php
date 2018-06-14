@@ -8,7 +8,7 @@ require 'recipe/symfony4.php';
 set('application', 'huwelijk');
 
 // Project repository
-set('repository', 'file:///home/sander/dev/huwelijk');
+set('repository', 'git@github.com:sandermarechal/wedding.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
