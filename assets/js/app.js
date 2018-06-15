@@ -6,6 +6,8 @@ import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 import faEnvelope from '@fortawesome/fontawesome-free-solid/faEnvelope';
 import faHeart from '@fortawesome/fontawesome-free-solid/faHeart';
 import faQuestion from '@fortawesome/fontawesome-free-solid/faQuestion';
+import faThumbsDown from '@fortawesome/fontawesome-free-solid/faThumbsDown';
+import faThumbsUp from '@fortawesome/fontawesome-free-solid/faThumbsUp';
 import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
 import faTrash from '@fortawesome/fontawesome-free-solid/faTrash';
 
@@ -22,6 +24,8 @@ fontawesome.library.add(
     faEnvelope,
     faHeart,
     faQuestion,
+    faThumbsDown,
+    faThumbsUp,
     faTimes,
     faTrash,
 );

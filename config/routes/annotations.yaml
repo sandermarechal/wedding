@@ -13,6 +13,11 @@ rsvp:
     type: annotation
     prefix: /rsvp
 
+song_admin:
+    resource: ../../src/Controller/SongAdminController.php
+    type: annotation
+    prefix: /admin/song
+
 user:
     resource: ../../src/Controller/UserController.php
     type: annotation

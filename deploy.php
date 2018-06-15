@@ -33,9 +33,13 @@ task('assets:webpack', function () {
     run('cd {{release_path}} && yarn run encore dev');
 });
 
-// [Optional] if deploy fails automatically unlock.
-after('deploy:failed', 'deploy:unlock');
+desc('Reload PHP');
+task('php:reload', function () {
+    run('sudo /etc/init.d/php7.1-fpm reload');
+});
 
-// Migrate database before symlink new release.
+// Hook tasks into flow
 before('deploy:symlink', 'database:migrate');
 before('deploy:symlink', 'assets:webpack');
+after('deploy:symlink', 'php:reload');
+after('deploy:failed', 'deploy:unlock');

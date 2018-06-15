@@ -224,4 +224,12 @@ input[type=submit] {
     font-size: 6rem;
 }
 
+.prezent-grid-actions {
+    text-align: right;
+
+    a {
+        margin-left: 8px;
+    }
+}
+
 @import "../../vendor/prezent/grid-bundle/Resources/public/css/prezent-grid.css"

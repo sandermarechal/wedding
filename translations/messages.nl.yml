@@ -8,6 +8,15 @@ crud:
             title: Gast toevoegen
         edit:
             title: Gast bewerken
+    songadmin:
+        index:
+            title: Muziek
+            action:
+                add: Nieuwe muziek
+        add:
+            title: Muziek toevoegen
+        edit:
+            title: Muziek bewerken
     useradmin:
         index:
             title: Gebruikers
@@ -38,6 +47,22 @@ flash:
     reset_password_verify:
         invalid: Ongeldige wachtwoord herstel link.
         success: Uw wachtwoord is aangepast. U kunt inloggen met uw nieuwe wachtwoord.
+    songadmin:
+        add:
+            success: De muziek is aangemaakt.
+            error: De muziek kon niet worden aangemaakt.
+        edit:
+            success: De muziek is bewerkt.
+            error: De muziek kon niet worden bewerkt.
+        delete:
+            success: De muziek is verwijderd.
+            error: De muziek kon niet worden verwijderd.
+        approve:
+            success: De muziek is goedgekeurd.
+            error: De muziek kon niet worden goedgekeurd.
+        reject:
+            success: De muziek is afgewezen.
+            error: De muziek kon niet worden afgewezen.
     useradmin:
         add:
             success: De gebruiker is aangemaakt.
@@ -75,6 +100,12 @@ form:
         password: Nieuw wachtwoord
         repeat: Herhaal nieuw wachtwoord
         submit: Herstellen
+    song:
+        performer: Artiest
+        title: Titel
+    songadmin:
+        submit: Opslaan
+        cancel: Annuleren
     user:
         email: E-mail adres
         login: Inloggen
@@ -98,6 +129,17 @@ grid:
         action:
             edit: Bewerken
             delete: Verwijderen
+    song:
+        column:
+            performer: Artiest
+            title: Titel
+            user: Suggestie van
+            status: Status
+        action:
+            edit: Bewerken
+            delete: Verwijderen
+            approve: Akkoord
+            reject: Afwijzen
     user:
         column:
             id: ID
@@ -129,6 +171,13 @@ modal:
         delete:
             title: Gast verwijderen
             text: Weet u zeker dat u deze gast wil verwijderen?
+            action:
+                cancel: Annuleren
+                delete: Verwijderen
+    songadmin:
+        delete:
+            title: Muziek verwijderen
+            text: Weet u zeker dat u deze muziek wil verwijderen?
             action:
                 cancel: Annuleren
                 delete: Verwijderen
@@ -209,6 +258,11 @@ view:
             yes: Ik kom wel naar het feest
             maybe: Ik kom misschien naar het feest
             no: Ik kom niet naar het feest
+    song:
+        status:
+            new: Nieuw
+            approved: Akkoord
+            rejected: Afgewezen
     user:
         divider: of
         login:

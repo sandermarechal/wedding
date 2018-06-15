@@ -73,6 +73,11 @@ class User implements UserInterface, \Serializable
     private $guests;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Song", mappedBy="user")
+     */
+    private $songs;
+
+    /**
      * Constructor
      */
     public function __construct(string $locale)
@@ -265,6 +270,35 @@ class User implements UserInterface, \Serializable
             $guest->setUser(null);
         }
     
+        return $this;
+    }
+
+    /**
+     * Getter for songs
+     */
+    public function getSongs(): Collection
+    {
+        return $this->songs;
+    }
+    
+    /**
+     * Add song
+     */
+    public function addSong(Song $song): self
+    {
+        if (!$this->songs->contains($song)) {
+            $this->songs[] = $song;
+        }
+    
+        return $this;
+    }
+    
+    /**
+     * Remove song
+     */
+    public function removeSong(Song $song): self
+    {
+        $this->songs->removeElement($song);
         return $this;
     }
 
