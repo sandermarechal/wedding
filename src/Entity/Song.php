@@ -10,10 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  * @ORM\Table(name="song")
- * @Assert\Expression(
- *     "this.getPerformer() or this.getTitle()",
- *     message="song_empty"
- * )
  */
 class Song
 {
@@ -36,6 +32,10 @@ class Song
 
     /**
      * @ORM\Column(name="performer", type="string")
+     * @Assert\Expression(
+     *     "this.getPerformer() or this.getTitle()",
+     *     message="song_empty"
+     * )
      */
     private $performer = '';
 

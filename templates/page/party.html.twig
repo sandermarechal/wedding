@@ -9,7 +9,10 @@
             </div>
             <h1>{{ 'view.party.party'|trans }}</h1>
             <h2>{{ 'view.party.datetime'|trans }}</h2>
-            <a href="{{ path('app_rsvp_index') }}" class="button rsvp-now">{{ 'view.common.rsvp_now'|trans }}</a>
+            <div class="button-group party large expanded">
+                <a href="{{ path('app_rsvp_index') }}" class="button rsvp-now">{{ 'view.common.rsvp_now'|trans }}</a>
+                <a href="{{ path('app_song_index') }}" class="button song-now">{{ 'view.common.song_now'|trans }}</a>
+            </div>
         </div>
         <div id="info">
             <dl>

@@ -103,6 +103,8 @@ form:
     song:
         performer: Artiest
         title: Titel
+        submit: Opslaan
+        cancel: Annuleren
     songadmin:
         submit: Opslaan
         cancel: Annuleren
@@ -165,6 +167,7 @@ menu:
     rsvp: R.S.V.P.
     ceremony: Ceremonie
     party: Feest
+    songs: Muziek
 
 modal:
     guestadmin:
@@ -219,6 +222,7 @@ view:
             value: "Het Stadhuis is op 15 minuten loopafstand van Centraal Station 's-Hertogenbosch."
     common:
         rsvp_now: R.S.V.P. nu!
+        song_now: Muziek suggesties
     gifts:
         title: Kado-tip
         text: "We hebben samen een prachtig huis in 's-Hertogenbosch, maar het is hard toe aan een opknapbeurt! Daarom vragen wij aan de gasten die een kado willen geven om een envelop met inhoud. Hiermee kunnen we ons huis eens goed onder handen nemen zodat we fris ons huwelijk in kunnen. Alvast bedankt!"
@@ -259,6 +263,14 @@ view:
             maybe: Ik kom misschien naar het feest
             no: Ik kom niet naar het feest
     song:
+        title:
+            index: Muziek
+            add: Nieuwe muziek suggestie
+            edit: Muziek bewerken
+        text: Wij zijn op zoek naar suggesties voor leuke muziek voor op het feest! Hieronder kun je tot 10 suggesties aan ons doen. Alvast bedankt!
+        add_song: Nieuwe muziek suggestie
+        edit_song: Suggestie bewerken
+        delete_song: Suggestie verwijderen
         status:
             new: Nieuw
             approved: Akkoord

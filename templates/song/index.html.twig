@@ -1,0 +1,22 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <h2>{{ 'view.song.title.index'|trans }}</h2>
+    <p>{{ 'view.song.text'|trans }}</p>
+    {% for song in songs %}
+        <div class="song callout">
+            <div class="actions">
+                <a href="{{ path('app_song_modify', {'song': song.id}) }}" class="song-edit" title="{{ 'view.song.edit_song'|trans() }}"><i class="fas fa-edit"></i></a>
+                <a href="{{ path('app_song_delete', {'song': song.id}) }}" class="song-delete" title="{{ 'view.song.delete_song'|trans() }}"><i class="fas fa-trash"></i></a>
+            </div>
+
+            <h5>{{ song.performer }}{% if song.performer and song.title %}: {% endif %}{{ song.title }}</h5>
+        </div>
+    {% endfor %}
+
+    {% if songs|length < 10 %}
+        <a href="{{ path('app_song_modify') }}" class="button song-add">{{ 'view.song.add_song'|trans() }}</a>
+
+        <div class="reveal" id="song-modal" data-reveal></div>
+    {% endif %}
+{% endblock %}

@@ -48,6 +48,19 @@ $('.guest-add, .guest-edit').on('click', function (event) {
         });
 });
 
+// Managing songs
+var $modal = $('#song-modal');
+
+$('.song-add, .song-edit').on('click', function (event) {
+    event.preventDefault();
+
+    $.ajax($(this).attr('href'))
+        .done(function (html) {
+            $modal.html($(html).find('#content'));
+            $modal.foundation('open');
+        });
+});
+
 var ceremonyData = [{
         position: {
             lat: 51.688442,

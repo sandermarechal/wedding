@@ -24,10 +24,12 @@ class SongType extends AbstractType
             ->add('performer', Type\TextType::class, [
                 'label' => 'form.song.performer',
                 'required' => false,
+                'empty_data' => '',
             ])
             ->add('title', Type\TextType::class, [
-                'label' => 'form.song.performer',
+                'label' => 'form.song.title',
                 'required' => false,
+                'empty_data' => '',
             ])
         ;
     }

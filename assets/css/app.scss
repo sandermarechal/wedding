@@ -216,8 +216,11 @@ input[type=submit] {
     }
 }
 
-.rsvp-now {
-    font-size: 1.5rem;
+.song {
+    .actions {
+        width: 40px;
+        float: right;
+    }
 }
 
 .envelope {

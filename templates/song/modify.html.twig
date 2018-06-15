@@ -1,0 +1,15 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    {% if song %}
+        <h1>{{ 'view.song.title.edit'|trans }}</h1>
+    {% else %}
+        <h1>{{ 'view.song.title.add'|trans }}</h1>
+    {% endif %}
+
+    {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <input type="submit" class="button" value="{{ 'form.song.submit'|trans }}" />
+        <a class="button secondary" href="{{ path('app_song_index') }}">{{ 'form.song.cancel'|trans }}</a>
+    {{ form_end(form) }}
+{% endblock %}
