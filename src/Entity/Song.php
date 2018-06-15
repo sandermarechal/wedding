@@ -74,6 +74,15 @@ class Song
     }
 
     /**
+     * Set user
+     */
+    public function setUser(?User $user = null): self
+    {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
      * Get performer
      */
     public function getPerformer(): string

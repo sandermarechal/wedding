@@ -85,7 +85,12 @@ class SongController extends Controller
             throw $this->createNotFoundException();
         }
 
-        $om->remove($song);
+        if ($song->getStatus() == Song::STATUS_APPROVED) {
+            $song->setUser(null);
+        } else {
+            $om->remove($song);
+        }
+
         $om->flush();
 
         return $this->redirectToRoute('app_song_index');
