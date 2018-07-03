@@ -36,28 +36,28 @@ $(document).ready(function () {
 });
 
 // Managing guests
-var $modal = $('#guest-modal');
+var $guestModal = $('#guest-modal');
 
 $('.guest-add, .guest-edit').on('click', function (event) {
     event.preventDefault();
 
     $.ajax($(this).attr('href'))
         .done(function (html) {
-            $modal.html($(html).find('#content'));
-            $modal.foundation('open');
+            $guestModal.html($(html).find('#content'));
+            $guestModal.foundation('open');
         });
 });
 
 // Managing songs
-var $modal = $('#song-modal');
+var $songModal = $('#song-modal');
 
 $('.song-add, .song-edit').on('click', function (event) {
     event.preventDefault();
 
     $.ajax($(this).attr('href'))
         .done(function (html) {
-            $modal.html($(html).find('#content'));
-            $modal.foundation('open');
+            $songModal.html($(html).find('#content'));
+            $songModal.foundation('open');
         });
 });
 
