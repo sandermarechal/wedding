@@ -40,7 +40,13 @@ class GuestGridType extends BaseGridType
             ])
             ->addColumn('user', Type\StringType::class, [
                 'label' => 'grid.guest.column.user',
-                'property_path' => 'user.email',
+                'property_path' => function ($guest) {
+                    if ($user = $guest->getUser()) {
+                        return $user->getEmail();
+                    }
+
+                    return '';
+                },
             ])
             ->addAction('edit', [
                 'icon' => 'edit',
