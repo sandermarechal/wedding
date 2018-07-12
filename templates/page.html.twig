@@ -21,6 +21,13 @@
                 <li><a href="{{ path('app_page_index', {'page': 'party'}) }}">{{ 'menu.party'|trans }}</a></li>
                 <li><a href="{{ path('app_page_index', {'page': 'gifts'}) }}">{{ 'menu.gifts'|trans }}</a></li>
             </ul>
+            {% if is_granted('ROLE_ADMIN') %}
+                <ul class="menu vertical">
+                    <li><a href="{{ path('app_guestadmin_index') }}">Gasten</a></li>
+                    <li><a href="{{ path('app_songadmin_index') }}">Muziek</a></li>
+                    <li><a href="{{ path('app_useradmin_index') }}">Gebruikers</a></li>
+                </ul>
+            {% endif %}
         </div>
 
         <div class="off-canvas-content" data-off-canvas-content>
